@@ -3,15 +3,8 @@ from mpi4py import MPI
 import numpy as np
 import cv2
 
-'''
-Load the image files form the folder
-input:
-    imgDir: the direction of the folder
-    imgName:the name of the folder
-output:
-    data:the data of the dataset
-    label:the label of the datset
-'''
+IMAGE_H = 200
+IMAGE_W = 300
 
 
 def div_list(ls, n):
@@ -47,12 +40,12 @@ def load_Img(filedir):
 
 def load_img_batch(img_name_list):
     num = len(img_name_list)
-    img_list = np.zeros((num, 3, 28, 28))
+    img_list = np.zeros((num, 3, IMAGE_H, IMAGE_W))
     for i in range(num):
         img = cv2.imread(img_name_list[i])
         if img is None:
             continue
-        img_ = np.resize(img, (28, 28, 3))
-        img_ = img_[:, :, ::-1].transpose((2, 0, 1))
+        img_ = np.resize(img, (IMAGE_H, IMAGE_W, 3))/255
+        img_ = img_.transpose((2, 0, 1))
         img_list[i] = (img_)
     return img_list
