@@ -9,7 +9,7 @@ rank = comm.Get_rank()
 
 start = time.process_time()
 
-file_ = load_Img("./images")
+file_ = load_Img("../images")
 file_list = div_list(file_, size)
 file_batch = file_list[rank]
 image_batch = load_img_batch(file_batch)
@@ -17,4 +17,4 @@ image_batch = load_img_batch(file_batch)
 end = time.process_time()
 if rank == 0:
     print("image loaded")
-    print("use time:",end-start,"s")
+    print("use time:", end-start, "s")
