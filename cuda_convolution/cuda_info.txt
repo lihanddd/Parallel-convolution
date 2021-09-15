@@ -1,0 +1,158 @@
+======================================================
+使用GPU device 0: GeForce RTX 2080 Ti
+设备全局内存总量： 11019MB
+SM的数量：68
+每个线程块的共享内存大小：48 KB
+每个线程块的最大线程数：1024
+设备上一个线程块（Block）种可用的32位寄存器数量： 65536
+每个EM的最大线程数：1024
+每个EM的最大线程束数：32
+设备上多处理器的数量： 68
+最高频率：1.545GHz
+显存位宽：352bit
+显存频率：7GHz
+======================================================
+======================================================
+使用GPU device 1: GeForce RTX 2080 Ti
+设备全局内存总量： 11019MB
+SM的数量：68
+每个线程块的共享内存大小：48 KB
+每个线程块的最大线程数：1024
+设备上一个线程块（Block）种可用的32位寄存器数量： 65536
+每个EM的最大线程数：1024
+每个EM的最大线程束数：32
+设备上多处理器的数量： 68
+最高频率：1.545GHz
+显存位宽：352bit
+显存频率：7GHz
+======================================================
+======================================================
+使用GPU device 2: GeForce RTX 2080 Ti
+设备全局内存总量： 11019MB
+SM的数量：68
+每个线程块的共享内存大小：48 KB
+每个线程块的最大线程数：1024
+设备上一个线程块（Block）种可用的32位寄存器数量： 65536
+每个EM的最大线程数：1024
+每个EM的最大线程束数：32
+设备上多处理器的数量： 68
+最高频率：1.545GHz
+显存位宽：352bit
+显存频率：7GHz
+======================================================
+======================================================
+使用GPU device 3: GeForce RTX 2080 Ti
+设备全局内存总量： 11016MB
+SM的数量：68
+每个线程块的共享内存大小：48 KB
+每个线程块的最大线程数：1024
+设备上一个线程块（Block）种可用的32位寄存器数量： 65536
+每个EM的最大线程数：1024
+每个EM的最大线程束数：32
+设备上多处理器的数量： 68
+最高频率：1.545GHz
+显存位宽：352bit
+显存频率：7GHz
+======================================================
+
+
+===========array size: 512 kernel size: 3============
+cpu convolution time: 16.099ms
+gpu convolution time: 0.219ms
+residual of cpu and gpu: 0
+===========array size: 512 kernel size: 5============
+cpu convolution time: 36.794ms
+gpu convolution time: 0.476ms
+residual of cpu and gpu: 0
+===========array size: 512 kernel size: 9============
+cpu convolution time: 124.662ms
+gpu convolution time: 1.468ms
+residual of cpu and gpu: 0
+===========array size: 512 kernel size: 12============
+cpu convolution time: 262.662ms
+gpu convolution time: 5.404ms
+residual of cpu and gpu: 0
+===========array size: 512 kernel size: 15============
+cpu convolution time: 318.365ms
+gpu convolution time: 7.712ms
+residual of cpu and gpu: 0
+===========array size: 1024 kernel size: 3============
+cpu convolution time: 61.154ms
+gpu convolution time: 1.621ms
+residual of cpu and gpu: 0
+===========array size: 1024 kernel size: 5============
+cpu convolution time: 152.56ms
+gpu convolution time: 2.801ms
+residual of cpu and gpu: 0
+===========array size: 1024 kernel size: 9============
+cpu convolution time: 489.242ms
+gpu convolution time: 11.578ms
+residual of cpu and gpu: 0
+===========array size: 1024 kernel size: 12============
+cpu convolution time: 866.049ms
+gpu convolution time: 21.052ms
+residual of cpu and gpu: 0
+===========array size: 1024 kernel size: 15============
+cpu convolution time: 1600.65ms
+gpu convolution time: 14.442ms
+residual of cpu and gpu: 0
+===========array size: 2048 kernel size: 3============
+cpu convolution time: 268.357ms
+gpu convolution time: 2.679ms
+residual of cpu and gpu: 0
+===========array size: 2048 kernel size: 5============
+cpu convolution time: 626.285ms
+gpu convolution time: 6.67ms
+residual of cpu and gpu: 0
+===========array size: 2048 kernel size: 9============
+cpu convolution time: 1952.97ms
+gpu convolution time: 21.855ms
+residual of cpu and gpu: 0
+===========array size: 2048 kernel size: 12============
+cpu convolution time: 3443.63ms
+gpu convolution time: 36.21ms
+residual of cpu and gpu: 0
+===========array size: 2048 kernel size: 15============
+cpu convolution time: 5396.59ms
+gpu convolution time: 56.497ms
+residual of cpu and gpu: 0
+===========array size: 4096 kernel size: 3============
+cpu convolution time: 988.165ms
+gpu convolution time: 10.254ms
+residual of cpu and gpu: 0
+===========array size: 4096 kernel size: 5============
+cpu convolution time: 2537.33ms
+gpu convolution time: 26.71ms
+residual of cpu and gpu: 0
+===========array size: 4096 kernel size: 9============
+cpu convolution time: 8241ms
+gpu convolution time: 87.84ms
+residual of cpu and gpu: 0
+===========array size: 4096 kernel size: 12============
+cpu convolution time: 14514.5ms
+gpu convolution time: 203.989ms
+residual of cpu and gpu: 0
+===========array size: 4096 kernel size: 15============
+cpu convolution time: 22420.2ms
+gpu convolution time: 450.527ms
+residual of cpu and gpu: 0
+===========array size: 8192 kernel size: 3============
+cpu convolution time: 4134.59ms
+gpu convolution time: 91.947ms
+residual of cpu and gpu: 0
+===========array size: 8192 kernel size: 5============
+cpu convolution time: 10717ms
+gpu convolution time: 239.792ms
+residual of cpu and gpu: 0
+===========array size: 8192 kernel size: 9============
+cpu convolution time: 32826.9ms
+gpu convolution time: 348.651ms
+residual of cpu and gpu: 0
+===========array size: 8192 kernel size: 12============
+cpu convolution time: 58481.7ms
+gpu convolution time: 764.437ms
+residual of cpu and gpu: 0
+===========array size: 8192 kernel size: 15============
+cpu convolution time: 90899.6ms
+gpu convolution time: 1291.1ms
+residual of cpu and gpu: 0
