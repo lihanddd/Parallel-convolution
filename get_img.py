@@ -2,11 +2,8 @@ import os
 from mpi4py import MPI
 import numpy as np
 import cv2
-
 IMAGE_H = 200
 IMAGE_W = 300
-
-
 def div_list(ls, n):
     if not isinstance(ls, list) or not isinstance(n, int):
         return []
@@ -28,16 +25,12 @@ def div_list(ls, n):
         # 算上末尾的j+k
         ls_return.append(ls[(n-1)*j:])
         return ls_return
-
-
 def load_Img(filedir):
     file_ = []
     for fname in os.listdir(filedir):
         file_path = filedir + '/' + fname
         file_.append(file_path)
     return file_
-
-
 def load_img_batch(img_name_list):
     num = len(img_name_list)
     img_list = np.zeros((num, 3, IMAGE_H, IMAGE_W))

@@ -8,6 +8,7 @@ import threading
 import cv2
 import matplotlib
 import tqdm
+from conv_withPARALLEL import Conv2d_plus
 IMAGE_H = 200
 IMAGE_W = 300
 class MyThread(threading.Thread):
@@ -24,8 +25,6 @@ class MyThread(threading.Thread):
             return self.result
         except Exception:
             return None
-
-
 if __name__ == '__main__':
     file_ = load_Img("/Users/puyuandong613/Downloads/Parallel-convolution/Parallel-convolution-Thread/images")
     start_imread1=time.time()
@@ -49,13 +48,14 @@ if __name__ == '__main__':
     # rec_imgs1.append(rec_img)
     # end_imgConv1=time.time()
     # print("without parallel: conv time",end_imgConv1-start_imgConv1)
-
     #并行化读文件
     img_save_dir="/Users/puyuandong613/Downloads/Parallel-convolution/Parallel-convolution-Thread/img_time"
     cov_save_dir="/Users/puyuandong613/Downloads/Parallel-convolution/Parallel-convolution-Thread/cov_time"
+    img_dir="/Users/puyuandong613/Downloads/Parallel-convolution/Parallel-convolution-Thread/convoluted_images/"
     img_time=[]
     cov_time=[]
-    process_nums=[1,2,4,8,16,32,64,128]
+    process_nums=[1,2,3,4,5,6,7,8]
+    conv2d_plus=Conv2d_plus(in_plains=3,out_plains=3)
     for process_num in tqdm.tqdm(process_nums):
         threads=[]
         img_batches2=[]
@@ -71,7 +71,8 @@ if __name__ == '__main__':
         for thread in threads:
             thread.start()
         for thread in threads:
-            thread.join()
+            threading.Thread.join(thread)
+            # thread.join()
         for thread in threads:
             img_batches2.append(thread.result)
         end_imread2=time.time()
@@ -81,21 +82,23 @@ if __name__ == '__main__':
         start_imgConv2=time.time()
         rec_imgs2=[]
         threads2=[]
-        for i in range(len(img_batches2)):
-            t=MyThread(func=conv2d.convolution,args=(img_batches2[i],))
+        for i in range(process_num):
+            # t=MyThread(func=conv2d.convolution,args=(img_batches2[i],))
+            t=MyThread(func=conv2d_plus.convolution,args=(img_batches2[i],))
             threads2.append(t)
         for thread in threads2:
             thread.start()
         for thread in threads2:
             thread.join()
         for thread in threads2:
-            rec_imgs2.append(thread.result)
+            rec_imgs2.append(thread.get_result())
         end_imgConv2=time.time()
         print("with parallel: conv time", end_imgConv2-start_imgConv2)
         cov_time.append(end_imgConv2-start_imgConv2)
-with open(img_save_dir,"w") as img_f:
-    img_f.write(str(img_time))
+
+with open(img_save_dir,"a") as img_f:
+    img_f.write(str(img_time)+"\n")
     img_f.close()
-with open(cov_save_dir,'w') as cov_f:
-    cov_f.write(str(cov_time))
+with open(cov_save_dir,'a') as cov_f:
+    cov_f.write(str(cov_time)+"\n")
     cov_f.close()
