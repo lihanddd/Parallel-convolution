@@ -1,0 +1,24 @@
+{
+    "configurations": [
+        {
+            "name": "Win32",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "D:/opencv4.5.3/build/x64/mingw/install/include",
+                "D:/opencv4.5.3/build/x64/mingw/install/include/opencv2"
+               // "D:/opencv4.5.3/build/x64/mingw/install/include/opencv" 
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            //"compilerPath": "C:\\mingw64\\bin\\gcc.exe",
+            "compilerPath": "D:/MinGW/x86_64-8.1.0-release-posix-seh-rt_v6-rev0/mingw64/bin/gcc.exe",
+            "cStandard": "gnu11",
+            "cppStandard": "gnu++14",
+            "intelliSenseMode": "windows-gcc-x64"
+        }
+    ],
+    "version": 4
+}
