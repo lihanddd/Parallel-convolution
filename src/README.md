@@ -8,7 +8,6 @@
 
 Please run run.sh after you've  granted relevant permissions
 
-```shell
 Also, you are suggested to change your directory in /src
 
 
