@@ -1,3 +1,7 @@
+// @ author: Yiyuan Zhang
+// @ email: 1120193636@bit.edu.cn
+
+
 #include <stdlib.h>
 #include <iostream>
 #include <sys/time.h>
@@ -49,6 +53,9 @@ int main()
         max_error += abs(100-C[i]);
     }
     
+    cout << "======================================================" << endl;
+    cout << "===========Sequential Experiments: Convolution========" << endl;
+    cout << "======================================================" << endl;
     cout << "max_error is " << max_error <<endl;     
     gettimeofday( &end, NULL );
     int timeuse = 1000000 * ( end.tv_sec - start.tv_sec ) + end.tv_usec - start.tv_usec;

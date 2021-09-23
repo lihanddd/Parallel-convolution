@@ -1,3 +1,7 @@
+// @ author: Yiyuan Zhang
+// @ email: 1120193636@bit.edu.cn
+
+
 #include "device_launch_parameters.h"
 #include <iostream>
 using namespace std;
@@ -10,6 +14,9 @@ int main()
     {
         cudaDeviceProp devProp;
         cudaGetDeviceProperties(&devProp, i);
+        cout << "======================================================" << endl;
+        cout << "=Sequential && Parallel Experiments CUDA: Convolution=" << endl;
+        cout << "======================================================" << endl;
         cout << "使用GPU device " << i << ": " << devProp.name << endl;
         cout << "设备全局内存总量： " << devProp.totalGlobalMem / 1024 / 1024 << "MB" << endl;
         cout << "SM的数量：" << devProp.multiProcessorCount << endl;
@@ -19,10 +26,12 @@ int main()
         cout << "每个EM的最大线程数：" << devProp.maxThreadsPerMultiProcessor << endl;
         cout << "每个EM的最大线程束数：" << devProp.maxThreadsPerMultiProcessor / 32 << endl;
         cout << "设备上多处理器的数量： " << devProp.multiProcessorCount << endl;
-        cout << "======================================================" << endl;
+       
         cout << "最高频率：" << devProp.clockRate / 1000000.0 << "GHz" << endl;
         cout << "显存位宽：" << devProp.memoryBusWidth << "bit" << endl;
         cout << "显存频率：" << devProp.memoryClockRate / 1000000.0 << "GHz" << endl;
+         cout << "======================================================" << endl;
+
     }
     return 0;
 }

@@ -1,3 +1,7 @@
+// @ author: Yiyuan Zhang
+// @ email: 1120193636@bit.edu.cn
+
+
 #include "cuda_runtime.h"
 #include "device_launch_parameters.h"
 #include <sys/time.h> 

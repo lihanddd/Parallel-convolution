@@ -1,3 +1,8 @@
+// @ author: Yiyuan Zhang
+// @ email: 1120193636@bit.edu.cn
+
+
+
 #include <iostream>
 #include <cstdlib>
 #include <sys/time.h>
@@ -100,7 +105,7 @@ void testConvTime(int array_size, int kernel_size)
     gettimeofday( &cpu_start, NULL );
     conv2d(a, kernel, res_cpu, array_size, kernel_size);
     gettimeofday(&cpu_end, NULL);
-    cout << "cpu convolution time: " << (cpu_end.tv_sec - cpu_start.tv_sec) * 1000 + (cpu_end.tv_usec - cpu_start.tv_usec) / 1000.0 << "ms" << endl;
+    cout << "Sequential convolution time: " << (cpu_end.tv_sec - cpu_start.tv_sec) * 1000 + (cpu_end.tv_usec - cpu_start.tv_usec) / 1000.0 << "ms" << endl;
 
     // test gpu convolution time
     gettimeofday( &gpu_start, NULL );
@@ -112,7 +117,7 @@ void testConvTime(int array_size, int kernel_size)
     }
     cudaDeviceSynchronize();
     gettimeofday(&gpu_end, NULL);
-    cout << "gpu convolution time: " << (gpu_end.tv_sec - gpu_start.tv_sec) * 1000 + (gpu_end.tv_usec - gpu_start.tv_usec) / 1000.0 << "ms" << endl;
+    cout << "Parallel convolution time: " << (gpu_end.tv_sec - gpu_start.tv_sec) * 1000 + (gpu_end.tv_usec - gpu_start.tv_usec) / 1000.0 << "ms" << endl;
 
     cudaMemcpy(res_gpu, d_data_res_gpu, result_size * result_size * sizeof(double), cudaMemcpyDeviceToHost);
 
@@ -120,7 +125,7 @@ void testConvTime(int array_size, int kernel_size)
     for (int i = 0; i < result_size * result_size; i++) {
         residual += (res_cpu[i / result_size][i % result_size] - res_gpu[i]);
     }
-    cout << "residual of cpu and gpu: " << residual << endl;
+    cout << "residual of Sequential and Parallel: " << residual << endl;
 
     for (int i = 0; i < array_size; i++)
         delete a[i];
