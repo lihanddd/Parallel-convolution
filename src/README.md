@@ -11,8 +11,6 @@ Please run run.sh after you've  granted relevant permissions
 Also, you are suggested to change your directory in /src
 
 
-```
-
 ```shell
 cd src
 ```
