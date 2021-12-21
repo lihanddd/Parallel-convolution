@@ -7,4 +7,4 @@
 ### mpi4py 李翰东
 ### pthread 蒲沅东
 ### Cuda 张懿元
-## openMP 康宇豪
+### openMP 康宇豪
